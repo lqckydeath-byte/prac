@@ -40,7 +40,7 @@ class CatalogView(TemplateView):
         if category_slug:
             current_category = get_object_or_404(Category, slug=category_slug)
             products = products.filter(category=current_category)
-
+    
         query = self.request.GET.get('q')
         if query:
             products = products.filter(
